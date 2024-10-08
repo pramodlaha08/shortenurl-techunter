@@ -3,8 +3,11 @@ import Hero from './components/Hero';
 
 const App = () => {
   return (
-    <div>
+    <div className='container mx-auto w-full h-screen px-4'>
+      <div className='mt-[10rem] flex justify-center items-center'>
       <Hero />
+
+      </div>
     </div>
   );
 };
