@@ -82,7 +82,7 @@ const Hero = () => {
         } bg-gray-50 mt-8 p-4 w-full max-w-[70%] shadow-md rounded-lg transition-all ease-linear duration-300`}
       >
         <div className="flex h-full w-full text-dark justify-between items-center">
-          <div className="font-semibold text-base truncate">{shortenUrl}</div>
+          <a target='_blank' href={shortenUrl} className="underline font-semibold text-base truncate">{shortenUrl}</a>
 
           <div className="self-start flex gap-2 items-center cursor-pointer" onClick={handleCopy}>
             <p className={`text-primary text-xs ${copied ? 'block' : 'hidden'}`}>Copied</p>
