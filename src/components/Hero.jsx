@@ -6,7 +6,7 @@ const Hero = () => {
   const [shortenUrl, setShortenUrl] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isUrl, setIsUrl] = useState(false);
-  const [copied, setCopied] = useState(false); // New state to show copy feedback
+  const [copied, setCopied] = useState(false); 
   const apiToken =
     "Jly8ftEs0kbLgrvzsoQkZMI6HD88FkpXy7ngKNtu30MuBkoQqtgz8lQhB339";
   const baseUrl = "https://api.tinyurl.com/create";
@@ -17,7 +17,7 @@ const Hero = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true); // Show loading spinner
+    setIsLoading(true); 
     const url = e.target.elements[0].value;
     geturl(url);
   };
@@ -32,24 +32,24 @@ const Hero = () => {
     axios
       .post(`${baseUrl}?api_token=${apiToken}`, data, { headers })
       .then((response) => {
-        setShortenUrl(response.data.data.tiny_url); // Set the shortened URL
+        setShortenUrl(response.data.data.tiny_url); 
       })
       .catch(() => {
-        setShortenUrl("Try again with valid URL"); // Handle any errors
+        setShortenUrl("Try again with valid URL"); 
       })
       .finally(() => {
-        setIsLoading(false); // Hide the loading spinner, no matter what
+        setIsLoading(false); hat
         setIsUrl(true);
-        setCopied(false); // Reset copied state when a new URL is generated
+        setCopied(false); 
       });
   };
 
-  // Function to copy the URL to the clipboard
+  
   const handleCopy = () => {
     if (shortenUrl) {
       navigator.clipboard.writeText(shortenUrl).then(() => {
-        setCopied(true); // Show that the URL has been copied
-        setTimeout(() => setCopied(false), 2000); // Hide after 2 seconds
+        setCopied(true); 
+        setTimeout(() => setCopied(false), 2000); 
       });
     }
   };
