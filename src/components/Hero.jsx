@@ -89,13 +89,6 @@ const Hero = () => {
             <IoClipboardOutline />
           </div>
         </div>
-
-        {/* Display copy success message */}
-        {copied && (
-          <div className="text-green-600 mt-2 text-sm">
-            URL copied to clipboard!
-          </div>
-        )}
       </div>
     </div>
   );
